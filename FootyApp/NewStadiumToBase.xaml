@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FootyApp.NewStadiumToBase">
+    <StackLayout Margin="10,15,10,10">
+        <Entry x:Name="NameEntry"
+               Placeholder="Enter Name"
+               PlaceholderColor="Black"
+               ClearButtonVisibility="WhileEditing"
+               FontSize="Micro" />
+        <Entry x:Name="LocationEntry"
+               Placeholder="Enter Location"
+               PlaceholderColor="Black" 
+               ClearButtonVisibility="WhileEditing"
+               FontSize="Micro"/>
+        <Entry x:Name="SizeEntry"
+               Placeholder="Enter Size(Number of maximum players)" 
+               PlaceholderColor="black" 
+               ClearButtonVisibility="WhileEditing"
+               FontSize="Micro"/>
+        <!--   <Entry x:Name="PhotoEntry"
+               Placeholder="Add Photo" />    Фото -->
+        <Entry x:Name="DescriptionEntry"
+               Placeholder="Enter DescriptionRules"
+               PlaceholderColor="black" 
+               ClearButtonVisibility="WhileEditing"
+               FontSize="Micro"/>
+        <Picker x:Name="FieldTypePicker" Title="Choose Field Type" FontSize="Micro" SelectedIndexChanged="FieldTypePicker_SelectedIndexChanged">
+            <Picker.Items>
+                <x:String>FreeToPlay</x:String>
+                <x:String>PaidField</x:String>
+                <x:String>PayToWin</x:String>           
+            </Picker.Items>
+        </Picker>
+        <Button Text="Add to Database"
+                FontSize="Micro"
+                Clicked="AddStadium_OnClicked"/>
+    </StackLayout>
+</ContentPage>

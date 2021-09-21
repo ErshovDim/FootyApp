@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FootyApp.StadiumsDB_Page">    
+        <StackLayout>
+            <CollectionView x:Name="StadiumView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="--------------------------"
+                               TextColor="DarkViolet"  
+                               FontSize="Micro"   />
+                        <Label Text="{Binding Name, StringFormat=' Name: {0}'}"
+                               TextColor="Black"
+                               FontSize="Small"  />
+                        <Label Text="{Binding Location, StringFormat=' Location: {0}'}"
+                               TextColor="Blue"
+                               FontSize="Micro"  />
+                        <Label Text="{Binding Size, StringFormat=' MaxSize: {0}'}"
+                               TextColor="Blue"
+                               FontSize="Micro" />
+                        <Label Text="{Binding Description, StringFormat=' Description: {0}'}"
+                               TextColor="Blue"
+                               FontSize="Micro" />
+                        <Label Text="{Binding Type, StringFormat=' Type: {0}'}"
+                               TextColor="Blue" 
+                               FontSize="Micro" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+         </StackLayout>
+</ContentPage>
