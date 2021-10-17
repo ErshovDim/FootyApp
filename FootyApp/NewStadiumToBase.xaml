@@ -25,6 +25,11 @@
                PlaceholderColor="black" 
                ClearButtonVisibility="WhileEditing"
                FontSize="Micro"/>
+        <Entry x:Name="PhotoURLEntry"
+               Placeholder="Enter Photo URL"
+               PlaceholderColor="black" 
+               ClearButtonVisibility="WhileEditing"
+               FontSize="Micro"/>
         <Picker x:Name="FieldTypePicker" Title="Choose Field Type" FontSize="Micro" SelectedIndexChanged="FieldTypePicker_SelectedIndexChanged">
             <Picker.Items>
                 <x:String>FreeToPlay</x:String>

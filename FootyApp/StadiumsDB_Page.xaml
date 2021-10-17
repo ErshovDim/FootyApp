@@ -3,7 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FootyApp.StadiumsDB_Page">    
         <StackLayout>
-            <CollectionView x:Name="StadiumView">
+        <Picker x:Name="StadiumsDB_Page_Picker_FieldTypeFilter" Title="Choose Field Type" FontSize="Micro" SelectedIndexChanged="StadiumsDB_Page_Picker_FieldTypeFilter_Changed">
+            <Picker.Items>
+                <x:String>FreeToPlay</x:String>
+                <x:String>PaidField</x:String>
+                <x:String>PayToWin</x:String>
+            </Picker.Items>
+        </Picker>
+        <Picker x:Name="StadiumsDB_Page_Picker_FieldSizeFilter" Title="Choose Size" FontSize="Micro" SelectedIndexChanged="StadiumsDB_Page_Picker_FieldSizeFilter_Changed">
+            <Picker.Items>
+                <x:String>10</x:String>
+                <x:String>16</x:String>
+                <x:String>22</x:String>
+            </Picker.Items>
+        </Picker>
+        <CollectionView x:Name="StadiumView">   
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
@@ -25,7 +39,9 @@
                         <Label Text="{Binding Type, StringFormat=' Type: {0}'}"
                                TextColor="Blue" 
                                FontSize="Micro" />
-                        </StackLayout>
+                        <Image Source="{Binding PhotoURL}"                               
+                               HeightRequest="300" />
+                    </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

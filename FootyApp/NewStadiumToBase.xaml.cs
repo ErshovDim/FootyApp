@@ -23,11 +23,11 @@ namespace FootyApp
 
         async void AddStadium_OnClicked(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(LocationEntry.Text) && !string.IsNullOrWhiteSpace(SizeEntry.Text) && !string.IsNullOrWhiteSpace(DescriptionEntry.Text) && !string.IsNullOrWhiteSpace(NameEntry.Text))
+            if (!string.IsNullOrWhiteSpace(LocationEntry.Text) && !string.IsNullOrWhiteSpace(SizeEntry.Text) && !string.IsNullOrWhiteSpace(DescriptionEntry.Text) && !string.IsNullOrWhiteSpace(NameEntry.Text) && !string.IsNullOrWhiteSpace(PhotoURLEntry.Text))
             {
                 if (Int64.TryParse(SizeEntry.Text, out long number))
                 {                   
-                    if (FieldTypePicker.SelectedIndex > 0)
+                    if (FieldTypePicker.SelectedIndex > -1)
                     {
                         SizeEntry.PlaceholderColor = Color.Black;                        
                         SizeEntry.Placeholder = "Enter Size(Number of maximum players)";
@@ -37,9 +37,10 @@ namespace FootyApp
                             Location = LocationEntry.Text,
                             Size = int.Parse(SizeEntry.Text),
                             Description = DescriptionEntry.Text,
+                            PhotoURL = PhotoURLEntry.Text,
                             Type = FieldTypePicker.Items[FieldTypePicker.SelectedIndex]
                         });
-                        NameEntry.Text = SizeEntry.Text = LocationEntry.Text = DescriptionEntry.Text = string.Empty;
+                        NameEntry.Text = PhotoURLEntry.Text = SizeEntry.Text = LocationEntry.Text = DescriptionEntry.Text = string.Empty;
                         Button button = (Button)sender;
                         button.Text = "Done!";
                         button.BackgroundColor = Color.LightGreen;
